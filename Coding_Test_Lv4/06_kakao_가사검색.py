@@ -106,3 +106,69 @@ def solution(words, queries):
 # 테스트 3 〉	통과 (1981.84ms, 264MB)
 # 테스트 4 〉	통과 (1745.85ms, 336MB)
 # 테스트 5 〉	통과 (2876.93ms, 631MB)
+
+class Trie:
+    def __init__(self):
+        self.root = {}
+    
+    def insert(self, string):
+        cur_data = self.root
+        n = len(string)
+        for i in range(n):
+            if string[i] not in cur_data:
+                cur_data[string[i]] = [{}, 0]
+            cur_data[string[i]][1] += 1
+            cur_data = cur_data[string[i]][0]
+    
+    def find(self, string):
+        cur_data = self.root
+        n = len(string)
+        count = 0
+        for i in range(n):
+            if string[i] == "?":
+                return count
+            else:
+                if string[i] not in cur_data:
+                    return 0
+                count = cur_data[string[i]][1]
+                cur_data = cur_data[string[i]][0]
+        
+        return count
+
+# 테스트 1 〉	통과 (967.79ms, 151MB)
+# 테스트 2 〉	통과 (2148.37ms, 285MB)
+# 테스트 3 〉	통과 (1991.34ms, 264MB)
+# 테스트 4 〉	통과 (1448.49ms, 336MB)
+# 테스트 5 〉	통과 (2476.58ms, 631MB)
+
+class Trie:
+    def __init__(self):
+        self.root = {}
+    
+    def insert(self, string):
+        cur_data = self.root
+        for char in string:
+            if char not in cur_data:
+                cur_data[char] = [{}, 0]
+            cur_data[char][1] += 1
+            cur_data = cur_data[char][0]
+    
+    def find(self, string):
+        cur_data = self.root
+        count = 0
+        for char in string:
+            if char == "?":
+                return count
+            else:
+                if char not in cur_data:
+                    return 0
+                count = cur_data[char][1]
+                cur_data = cur_data[char][0]
+        
+        return count
+
+# 테스트 1 〉	통과 (989.85ms, 151MB)
+# 테스트 2 〉	통과 (1962.22ms, 285MB)
+# 테스트 3 〉	통과 (1831.01ms, 265MB)
+# 테스트 4 〉	통과 (1293.10ms, 336MB)
+# 테스트 5 〉	통과 (2269.39ms, 631MB)
