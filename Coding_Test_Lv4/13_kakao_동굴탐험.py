@@ -1,6 +1,6 @@
 # https://programmers.co.kr/learn/courses/30/lessons/67260?language=python3
 
-# 위상 정렬 풀이
+# 노드 B를 방문하기 전에 노드 A를 방문해야 하므로, 위상 정렬을 통해 가능한지 불가능한지 판별
 from collections import deque
 
 def solution(n, path, order):
