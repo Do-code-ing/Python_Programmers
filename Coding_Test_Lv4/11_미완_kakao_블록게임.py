@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42894
+
 def check(board, n, x, y):
     # 1
     if x+1 < n and y+2 < n:
