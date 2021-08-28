@@ -10,13 +10,13 @@ def solution(table, languages, preference):
             for j in range(len(languages)):
                 if arr[i] == languages[j]:
                     score += (5-i) * preference[j]
-        
+
         if max_score < score:
             max_score = score
             max_job = job
-        
+
         elif max_score == score:
             if max_job > job:
                 max_job = job
-    
+
     return max_job
