@@ -2,6 +2,7 @@
 
 from itertools import permutations
 
+
 def solution(numbers):
     answer = 0
     # 에라토스테네스의 체 구현
@@ -24,8 +25,5 @@ def solution(numbers):
     for num in arr:
         if dp[num]:
             answer += 1
-    
-    return answer
 
-numbers = "011"
-print(solution(numbers))
+    return answer
